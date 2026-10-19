@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joyeux anniversaire Coco 🎉 — découvre ton cadeau</title>
+  <meta name="description" content="Coco a 31 ans. Scrolle pour découvrir ton cadeau… ou tout ce que tu n'auras pas." />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="Joyeux anniversaire Coco 🎉" />
+  <meta property="og:description" content="Scrolle pour découvrir ton cadeau." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤿</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Special+Gothic+Expanded+One&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+
+  <!-- ===== Confettis ambiants (générés par le JS) ===== -->
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <!-- ===== Indicateur d'étapes + compteur (fixes) ===== -->
+  <ol class="dots" aria-hidden="true">
+    <li class="dot"></li><li class="dot"></li><li class="dot"></li><li class="dot"></li>
+    <li class="dot"></li><li class="dot"></li><li class="dot"></li>
+  </ol>
+  <output class="counter" id="counter" aria-hidden="true">Le brief</output>
+
+  <!-- ============ HERO ============ -->
+  <header class="slide hero is-active">
+    <p class="hero__eyebrow">Édition limitée · 1 seul exemplaire au monde</p>
+    <h1 class="hero__title">Coco<br>fête ses <span class="hero__num">31</span> ans.</h1>
+    <p class="hero__sub">
+      Développeur. Orateur hors pair. Capable de tenir une salle pendant une heure
+      sur <em>n'importe quel</em> sujet… tant qu'on ne lui demande pas où est Mulhouse.<br>
+      Aujourd'hui, pour une fois, c'est <strong>toi</strong> qu'on a décidé de gâter.
+      Enfin… on va voir.
+    </p>
+    <span class="hero__cue" aria-hidden="true">Scrolle pour découvrir ton cadeau ↓</span>
+  </header>
+
+  <!-- ============ LES SCÈNES ============
+       Chaque cadeau = une scène plein écran qui "snap".
+       L'animation se déclenche toute seule (ease-out) quand on arrive
+       dessus : présentation → … → tampon REFUSÉ. Puis on re-scrolle. -->
+
+  <!-- ===== Scène 0 — le brief ===== -->
+  <section class="slide gift g--intro" data-kind="intro" data-step="0">
+    <div class="gift__spot"></div>
+    <span class="gift__eyebrow">Brief créatif</span>
+    <figure class="memory polaroid memory--tr">
+      <img src="assets/bande.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption>toute la bande</figcaption>
+    </figure>
+    <div class="gift__object"><span class="emoji emoji--pop">🎁</span></div>
+    <h2 class="gift__title">On a hésité.<br>Longtemps.</h2>
+    <span class="gift__tag">5 propositions étudiées</span>
+    <p class="gift__line gift__line--static">
+      Cinq idées de cadeau, débattues comme une <em>pull request</em> à 200 commentaires.
+      Toi, tu en aurais fait un talk de 45 minutes.
+    </p>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </section>
+
+  <!-- ===== Scène 1 — para (refusé) ===== -->
+  <section class="slide gift g--para" data-kind="fake" data-step="1">
+    <div class="gift__spot"></div>
+    <span class="gift__eyebrow">Proposition n°1</span>
+    <figure class="memory polaroid memory--bl">
+      <img src="assets/kway.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption>paré au décollage</figcaption>
+    </figure>
+    <div class="gift__object"><span class="emoji">🪂</span></div>
+    <h2 class="gift__title"><span class="gift__strike"></span>Un baptême en parapente</h2>
+    <span class="gift__tag">vol biplace · 20 min sans micro</span>
+    <p class="gift__line">
+      Déjà fait. Et 20 minutes accroché à quelqu'un sans pouvoir placer un mot, tu n'as pas supporté la première fois.
+    </p>
+    <span class="stamp stamp--no">Refusé</span>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </section>
+
+  <!-- ===== Scène 2 — black (refusé) ===== -->
+  <section class="slide gift g--black" data-kind="fake" data-step="2">
+    <div class="gift__spot"></div>
+    <span class="gift__eyebrow">Proposition n°2</span>
+    <figure class="memory polaroid memory--tl">
+      <img src="assets/peignoir.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption>déjà en tenue</figcaption>
+    </figure>
+    <div class="gift__object"><span class="emoji">🕶️</span></div>
+    <h2 class="gift__title"><span class="gift__strike"></span>Une soirée black room «&nbsp;hétéro curieux&nbsp;»</h2>
+    <span class="gift__tag">dress code : noir · lumière : aucune</span>
+    <p class="gift__line">
+      Dans le noir complet, personne ne voit tes slides. Et tu aurais quand même lancé un tour de table pour que chacun se présente.
+    </p>
+    <span class="stamp stamp--no">Refusé</span>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </section>
+
+  <!-- ===== Scène 3 — zerog (refusé) ===== -->
+  <section class="slide gift g--zerog" data-kind="fake" data-step="3">
+    <div class="gift__spot"></div>
+    <span class="gift__eyebrow">Proposition n°3</span>
+    <figure class="memory polaroid memory--br">
+      <img src="assets/sieste.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption>l'entraînement en apesanteur</figcaption>
+    </figure>
+    <div class="gift__object"><span class="emoji">🚀</span></div>
+    <h2 class="gift__title"><span class="gift__strike"></span>Un vol Zéro G</h2>
+    <span class="gift__tag">≈ 7 000 € · 15 paraboles</span>
+    <p class="gift__line">
+      On a regardé le trajet jusqu'à l'aéroport. Tu ne l'aurais jamais trouvé.
+    </p>
+    <span class="stamp stamp--no">Refusé</span>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </section>
+
+  <!-- ===== Scène 4 — tir (refusé) ===== -->
+  <section class="slide gift g--tir" data-kind="fake" data-step="4">
+    <div class="gift__spot"></div>
+    <span class="gift__eyebrow">Proposition n°4</span>
+    <figure class="memory polaroid memory--bl">
+      <img src="assets/mains.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption>les mains en l'air</figcaption>
+    </figure>
+    <div class="gift__object"><span class="emoji">🔫</span></div>
+    <h2 class="gift__title"><span class="gift__strike"></span>Une séance de tir «&nbsp;gros calibre&nbsp;»</h2>
+    <span class="gift__tag">munitions incluses · déjà vu</span>
+    <p class="gift__line">
+      Du réchauffé : on l'a déjà offert à François. On a de l'imagination, mais pas tant que ça.
+    </p>
+    <span class="stamp stamp--no">Refusé</span>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </section>
+
+  <!-- ===== Scène 5 — geo (refusé) ===== -->
+  <section class="slide gift g--geo" data-kind="fake" data-step="5">
+    <div class="gift__spot"></div>
+    <span class="gift__eyebrow">Proposition n°5</span>
+    <figure class="memory polaroid memory--br">
+      <img src="assets/perdu.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption>« on est où, là ? »</figcaption>
+    </figure>
+    <div class="gift__object"><span class="emoji">🗺️</span><span class="pins" aria-hidden="true"><span>📍 Albi ?</span><span>📍 Poitiers ?</span><span>📍 Mulhouse ?</span></span></div>
+    <h2 class="gift__title"><span class="gift__strike"></span>Un road trip Albi → Poitiers → Mulhouse</h2>
+    <span class="gift__tag">3 villes · 1 200 km · 0 GPS</span>
+    <p class="gift__line">
+      On t'aurait laissé la carte. On serait partis pour Albi, on aurait fini à Brest, et tu nous aurais très bien expliqué que c'était le même coin.
+    </p>
+    <span class="stamp stamp--no">Refusé</span>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </section>
+
+  <!-- ===== Scène 6 — LE VRAI CADEAU ===== -->
+  <section class="slide gift gift--final g--final" data-kind="real" data-step="6">
+    <div class="gift__spot gift__spot--gold"></div>
+    <div class="burst" aria-hidden="true">
+      <span>🎉</span><span>🤿</span><span>✨</span><span>🐟</span><span>🎊</span>
+    </div>
+    <span class="gift__eyebrow gift__eyebrow--yes">Cadeau retenu</span>
+    <figure class="memory polaroid memory--tr">
+      <img src="assets/pret.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption>prêt pour la combi</figcaption>
+    </figure>
+    <div class="gift__object gift__object--hero"><span class="emoji emoji--dive">🤿</span></div>
+    <h2 class="gift__title gift__title--final">Une plongée.<br>Dans le lac d'Annecy.</h2>
+    <span class="gift__tag gift__tag--gold">Haute-Savoie (74) · oui, c'est en France</span>
+    <p class="gift__line gift__line--final">
+      Pas besoin de savoir où c'est, on t'y emmène.
+      Et sous l'eau, ni micro ni slides :
+      pour une fois, l'orateur <strong>se tait</strong>, et il écoute les poissons.
+    </p>
+    <span class="stamp stamp--yes">Offert ✓</span>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </section>
+
+  <!-- ============ OUTRO ============ -->
+  <footer class="slide outro">
+    <p class="outro__hand">Joyeux anniversaire,</p>
+    <h2 class="outro__title">Coco 🎉</h2>
+    <p class="outro__sub">
+      31 ans, toujours le meilleur orateur qu'on connaisse, et toujours incapable
+      de placer trois villes sur une carte. Pour réviser : Albi est dans le Tarn,
+      Poitiers dans la Vienne et Mulhouse en Alsace. Interro l'année prochaine.
+    </p>
+    <p class="outro__signature">Avec amour, toute la team 💙</p>
+
+    <p class="gallery__note">Pièces à conviction 📸</p>
+    <div class="gallery" aria-hidden="true">
+      <figure class="gallery__pic g1"><img src="assets/o-debuts.jpg" alt="" loading="lazy" decoding="async" /><figcaption>les débuts</figcaption></figure>
+      <figure class="gallery__pic g2"><img src="assets/o-orateur.jpg" alt="" loading="lazy" decoding="async" /><figcaption>l'orateur, déjà</figcaption></figure>
+      <figure class="gallery__pic g3"><img src="assets/o-charmeur.jpg" alt="" loading="lazy" decoding="async" /><figcaption>le charmeur</figcaption></figure>
+      <figure class="gallery__pic g4"><img src="assets/o-regard.jpg" alt="" loading="lazy" decoding="async" /><figcaption>le regard</figcaption></figure>
+    </div>
+
+    <button class="outro__btn" id="replay" type="button">Revoir le dévoilement ↺</button>
+  </footer>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
