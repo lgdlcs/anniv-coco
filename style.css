@@ -164,7 +164,7 @@ body.is-finale .confetti i { animation-duration: 2.2s !important; }
 }
 .pins span:nth-child(1) { top: 10%;  left: -42%; transform: rotate(-8deg); }
 .pins span:nth-child(2) { top: 40%;  right: -48%; transform: rotate(6deg); }
-.pins span:nth-child(3) { bottom: 2%; left: -44%; transform: rotate(4deg); }
+.pins span:nth-child(3) { bottom: 2%; left: -42%; transform: rotate(4deg); }
 .gift__object:has(.pins) { position: relative; }
 
 .gift__title {
@@ -172,6 +172,7 @@ body.is-finale .confetti i { animation-duration: 2.2s !important; }
   font-family: var(--display); font-weight: 400;
   font-size: clamp(1.8rem, 5vw, 3.2rem); line-height: 1.05; letter-spacing: -0.01em; max-width: 16ch;
 }
+.g--geo .gift__title { font-size: clamp(1.45rem, 4.2vw, 2.8rem); }
 .gift__title--final { color: #fff; text-shadow: 0 0 30px rgba(244,201,93,.4); }
 .gift__strike {
   position: absolute; top: 52%; left: -2%; height: 5px; width: 0;
